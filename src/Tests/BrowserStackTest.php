@@ -6,19 +6,21 @@ define('BROWSERSTACK_KEY', '5ArEFhXszqEEPswiYTFV');
 define('BRWOSERSTACK_IDENTIFIER', getenv('BS_IDENTIFIER'));
 class WebTest extends PHPUnit_Extensions_Selenium2TestCase
 {
-  public static $browsers = array(
-      'browserName' => 'chrome',
-      'host' => 'hub-cloud.browserstack.com',
-      'port' => 80,
-      'desiredCapabilities' => array(
-        'version' => '30',
-        'browserstack.user' => BROWSERSTACK_USER,
-        'browserstack.key' => BROWSERSTACK_KEY,
-        'os' => 'OS X',
-        'os_version' => 'Mountain Lion',
-	'browserstack.local' => true,
-	'browserstack.localIdentifier' => BRWOSERSTACK_IDENTIFIER
-      )
+    public static $browsers = array(
+        array(
+          'browserName' => 'chrome',
+          'host' => 'hub-cloud.browserstack.com',
+          'port' => 80,
+          'desiredCapabilities' => array(
+            'version' => '30',
+            'browserstack.user' => BROWSERSTACK_USER,
+            'browserstack.key' => BROWSERSTACK_KEY,
+            'os' => 'OS X',
+            'os_version' => 'Mountain Lion',
+        'browserstack.local' => true,
+        'browserstack.localIdentifier' => BRWOSERSTACK_IDENTIFIER
+        )
+        )
     )
     ;
     protected function setUp()
