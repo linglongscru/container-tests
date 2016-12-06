@@ -3,10 +3,10 @@
 require 'vendor/autoload.php';
 define('BROWSERSTACK_USER', 'linglongmeng2');
 define('BROWSERSTACK_KEY', '5ArEFhXszqEEPswiYTFV');
+define('BRWOSERSTACK_IDENTIFIER', getenv('BS_IDENTIFIER'));
 class WebTest extends PHPUnit_Extensions_Selenium2TestCase
 {
   public static $browsers = array(
-    array(
       'browserName' => 'chrome',
       'host' => 'hub-cloud.browserstack.com',
       'port' => 80,
@@ -16,11 +16,11 @@ class WebTest extends PHPUnit_Extensions_Selenium2TestCase
         'browserstack.key' => BROWSERSTACK_KEY,
         'os' => 'OS X',
         'os_version' => 'Mountain Lion',
-	"browserstack.local" => "true",
-	"browserstack.localIdentifier" => getenv('BS_IDENTIFIER')
+	'browserstack.local' => true,
+	'browserstack.localIdentifier' => BRWOSERSTACK_IDENTIFIER
       )
     )
-    );
+    ;
     protected function setUp()
     {
         parent::setUp();
