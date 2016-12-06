@@ -16,14 +16,15 @@ class WebTest extends PHPUnit_Extensions_Selenium2TestCase
         'browserstack.key' => BROWSERSTACK_KEY,
         'os' => 'OS X',
         'os_version' => 'Mountain Lion',
-	"browserstack.local" => true
+	"browserstack.local" => "true",
+	"browserstack.localIdentifier" => getenv('BS_IDENTIFIER')
       )
     )
     );
     protected function setUp()
     {
         parent::setUp();
-        $this->setBrowserUrl('http://www.google.com');
+        $this->setBrowserUrl('localhost');
     }
 
 
