@@ -23,7 +23,7 @@ class WebTest extends PHPUnit_Extensions_Selenium2TestCase
     protected function setUp()
     {
         parent::setUp();
-        $this->setBrowserUrl('http://scrutinizer.dev/app_dev.php');
+        $this->setBrowserUrl('http://www.google.com');
     }
 
 
